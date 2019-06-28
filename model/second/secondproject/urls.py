@@ -17,7 +17,9 @@ from django.contrib import admin
 from django.urls import path
 import blog.views
 
+# url을 타고 먼저 들어오기 때문에 url부터 코딩
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', blog.views.home, name="home"),
+    path('blog/<int:blog_id>', blog.views.detail, name="detail"),
 ]
